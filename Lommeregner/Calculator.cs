@@ -13,6 +13,19 @@ namespace Lommeregner
                 throw new DivideByZeroException("Denominator cannot be zero.");
             return (double)a / b;
         }
+
+        public double Power(double a, double b) => Math.Pow(a, b);
+
+        public double SquareRoot(double a)
+        {
+            if (a < 0)
+                throw new ArgumentException("Ikke med minus du");
+                        
+            return Math.Sqrt(a);
+        } 
+
+
+
     }
 
 }
