@@ -78,6 +78,59 @@ namespace xUnitTest
             // Act & Assert
             Assert.Throws<DivideByZeroException>(() => _calculator.Divide(a, b));
         }
+
+        [Fact]
+        public void Power_ReturnsCorrectPositive()
+        {
+            // Arrange
+            double a = 3;
+            double b = 4;
+
+            //Act
+            double result = _calculator.Power(a, b);
+
+            //Assert
+            Assert.Equal(81, result);
+
+
+        }
+
+        [Fact]
+        public void Power_ReturnsCorrectNegativeExponent()
+        {
+            // Arrange
+            double a = 3;
+            double b = -2;
+
+            // Act
+            double result = _calculator.Power(a, b);
+
+            // Assert
+            Assert.Equal(1.0 / 9.0, result);
+        }
+
+        [Fact]
+        public void SquareRoot_ReturnsCorrectValue()
+        {
+            // Arrange
+            double a = 16;
+
+            // Act
+            double result = _calculator.SquareRoot(a);
+
+            // Assert
+            Assert.Equal(4, result);
+        }
+
+        [Fact]
+        public void SquareRoot_ThrowsException_WhenInputIsNegative()
+        {
+            // Arrange
+            double a = -9;
+
+            // Act & Assert
+            Assert.Throws<ArgumentException>(() => _calculator.SquareRoot(a));
+        }
     }
 
 }
