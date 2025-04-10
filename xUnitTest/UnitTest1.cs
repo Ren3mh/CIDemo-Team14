@@ -9,7 +9,7 @@ namespace xUnitTest
 
         public UnitTest1()
         {
-            //_calculator = new Calculator();
+            _calculator = new Calculator();
         }
 
         [Fact]
